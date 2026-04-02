@@ -106,7 +106,7 @@
 
 .btn-ar:hover {
   background: var(--color-accent);
-  color: var(--color-bg);
+  color: var(--color-bg-primary);
   border-color: var(--color-accent);
 }
 
@@ -160,7 +160,7 @@
 }
 
 .product__meta-value {
-  color: var(--color-text);
+  color: var(--color-text-primary);
   font-weight: var(--weight-medium);
 }
 
@@ -276,7 +276,7 @@
   font-size: var(--text-sm);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--color-text);
+  color: var(--color-text-primary);
   cursor: pointer;
 }
 
@@ -319,7 +319,7 @@
 
 .cert-preview__text {
   font-size: var(--text-xs);
-  color: var(--color-text);
+  color: var(--color-text-primary);
   line-height: var(--leading-snug);
 }
 
@@ -328,7 +328,7 @@
   position: fixed;
   inset: 0;
   z-index: var(--z-modal);
-  background: var(--color-bg);
+  background: var(--color-bg-primary);
   display: flex;
   flex-direction: column;
   opacity: 0;
@@ -347,7 +347,7 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--color-border);
-  background: var(--color-bg);
+  background: var(--color-bg-primary);
   z-index: 2;
 }
 
@@ -356,19 +356,32 @@
   font-size: var(--text-sm);
   letter-spacing: var(--tracking-widest);
   text-transform: uppercase;
-  color: var(--color-text);
+  color: var(--color-text-primary);
 }
 
 .ar-modal__close {
-  background: transparent;
-  border: none;
-  color: var(--color-text);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
   font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.ar-modal__close:hover {
+  background: var(--color-text-primary);
+  color: var(--color-bg-primary);
+  border-color: var(--color-text-primary);
 }
 
 .ar-modal__view {
@@ -405,7 +418,7 @@
 
 .ar-modal__controls {
   padding: var(--space-5) var(--space-6);
-  background: var(--color-bg);
+  background: var(--color-bg-primary);
   border-top: 1px solid var(--color-border);
   display: flex;
   justify-content: center;
