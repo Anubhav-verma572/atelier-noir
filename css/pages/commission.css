@@ -1,0 +1,205 @@
+/* ============================================
+   ATELIER NOIR — Commission Page Styles
+   ============================================ */
+
+.commission-page {
+  padding-block: var(--space-section);
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+}
+
+.commission__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+/* --- Commission Info (Left side) --- */
+.commission__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.commission__title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+  font-weight: var(--weight-light);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-6);
+}
+
+.commission__desc {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-8);
+  max-width: 500px;
+}
+
+.commission__steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.step-item {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.step-item__num {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.step-item__content h4 {
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  margin-bottom: var(--space-1);
+}
+
+.step-item__content p {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+/* --- Commission Form (Right side) --- */
+.commission-form {
+  background: var(--color-bg-secondary);
+  padding: var(--space-10);
+  border: 1px solid var(--color-border);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+/* Floating Label Inputs */
+.form-group {
+  position: relative;
+  margin-bottom: var(--space-6);
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+  margin-bottom: var(--space-6);
+}
+
+.form-control {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-4) 0;
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--color-text);
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.form-label {
+  position: absolute;
+  left: 0;
+  top: var(--space-4);
+  font-size: var(--text-md);
+  color: var(--color-text-tertiary);
+  pointer-events: none;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+/* Float the label when input is focused or not empty (handled via JS or placeholder-shown trick) */
+.form-control:focus ~ .form-label,
+.form-control:not(:placeholder-shown) ~ .form-label {
+  top: -12px;
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+/* Select Styling */
+select.form-control {
+  appearance: none;
+  cursor: pointer;
+  padding-right: var(--space-6);
+}
+
+.select-arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--color-text-secondary);
+}
+
+/* Textarea handling */
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-submit {
+  margin-top: var(--space-4);
+  width: 100%;
+}
+
+/* Success State styling */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: var(--space-10);
+}
+
+.form-success.is-visible {
+  display: block;
+}
+
+.form-success__icon {
+  font-size: var(--text-4xl);
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+.form-success__title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-3);
+}
+
+.form-success__text {
+  color: var(--color-text-secondary);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .commission__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .commission-form {
+    padding: var(--space-6);
+  }
+}

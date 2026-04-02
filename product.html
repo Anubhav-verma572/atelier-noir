@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View 'Nocturne in Gold' by Elena Vasquez at Atelier Noir.">
+  <title>Nocturne in Gold — Elena Vasquez | Atelier Noir</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages/product.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E🎨%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <!-- Film Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" id="nav-logo">
+        Atelier <span>Noir</span>
+      </a>
+      
+      <div class="nav__links" id="nav-links">
+        <a href="index.html" class="nav__link" id="nav-home">Home</a>
+        <a href="collection.html" class="nav__link nav__link--active" id="nav-collections">Collections</a>
+        <a href="artists.html" class="nav__link" id="nav-artists">Artists</a>
+        <a href="commission.html" class="nav__link" id="nav-commission">Commission</a>
+        <a href="about.html" class="nav__link" id="nav-about">About</a>
+      </div>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <a href="cart.html" class="btn--icon cart-count" aria-label="Shopping cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-count__badge" style="display:none">0</span>
+        </a>
+
+        <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html" class="mobile-nav__link">Home</a>
+    <a href="collection.html" class="mobile-nav__link">Collections</a>
+    <a href="artists.html" class="mobile-nav__link">Artists</a>
+    <a href="commission.html" class="mobile-nav__link">Commission</a>
+    <a href="about.html" class="mobile-nav__link">About</a>
+    <a href="cart.html" class="mobile-nav__link">Cart</a>
+  </div>
+
+  <div class="page">
+    <main class="page__main">
+      <section class="product container reveal">
+        
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a>
+          <span class="breadcrumbs__sep">/</span>
+          <a href="collection.html">Paintings</a>
+          <span class="breadcrumbs__sep">/</span>
+          <span style="color: var(--color-text)">Nocturne in Gold</span>
+        </div>
+
+        <div class="product__grid">
+          
+          <!-- Image Gallery (Sticky Left) -->
+          <div class="product__gallery">
+            <div class="product__main-image" id="main-image-wrap">
+              <img src="assets/artwork-abstract.png" alt="Nocturne in Gold by Elena Vasquez" loading="eager">
+              <button class="btn-ar" id="ar-btn" aria-label="View in Room">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  <path d="M3.27 6.96L12 12.01l8.73-5.05"/>
+                  <path d="M12 22.08V12"/>
+                </svg>
+                View in Room
+              </button>
+            </div>
+            
+            <div class="product__thumbnails">
+              <div class="product__thumb active">
+                <img src="assets/artwork-abstract.png" alt="Thumbnail 1">
+              </div>
+              <div class="product__thumb">
+                <img src="assets/artwork-painting.png" alt="Thumbnail 2">
+              </div>
+              <!-- In a real site, these would be detail shots or different angles -->
+            </div>
+          </div>
+
+          <!-- Product Details (Scrollable Right) -->
+          <div class="product__info">
+            <div class="product__artist">Elena Vasquez</div>
+            <h1 class="product__title">Nocturne in Gold</h1>
+            <div class="product__price" id="product-price" data-base-price="8400">$8,400</div>
+
+            <div class="product__meta">
+              <div class="product__meta-item">
+                <span class="product__meta-label">Medium</span>
+                <span class="product__meta-value">Oil and 24k Gold Leaf on Canvas</span>
+              </div>
+              <div class="product__meta-item">
+                <span class="product__meta-label">Dimensions</span>
+                <span class="product__meta-value">48 × 36 in (122 × 91 cm)</span>
+              </div>
+              <div class="product__meta-item">
+                <span class="product__meta-label">Type</span>
+                <span class="product__meta-value">One-of-a-kind Original</span>
+              </div>
+            </div>
+
+            <!-- Customizer Options -->
+            <div class="product__options">
+              
+              <!-- Framing Option (example of price-affecting radio group) -->
+              <div class="option-group">
+                <span class="option-group__label">Framing Options</span>
+                <div class="selector-grid">
+                  <div class="selector-item">
+                    <input type="radio" name="frame" id="frame-none" value="none" data-price-add="0" checked>
+                    <label for="frame-none">
+                      <span class="selector-item__title">No Frame</span>
+                      <span class="selector-item__desc">Gallery Wrapped</span>
+                    </label>
+                  </div>
+                  <div class="selector-item">
+                    <input type="radio" name="frame" id="frame-wood" value="wood" data-price-add="450">
+                    <label for="frame-wood">
+                      <span class="selector-item__title">Walnut Float Frame</span>
+                      <span class="selector-item__desc">+$450</span>
+                    </label>
+                  </div>
+                  <div class="selector-item">
+                    <input type="radio" name="frame" id="frame-black" value="black" data-price-add="380">
+                    <label for="frame-black">
+                      <span class="selector-item__title">Matte Black Float</span>
+                      <span class="selector-item__desc">+$380</span>
+                    </label>
+                  </div>
+                  <div class="selector-item">
+                    <input type="radio" name="frame" id="frame-white" value="white" data-price-add="380">
+                    <label for="frame-white">
+                      <span class="selector-item__title">Gallery White Float</span>
+                      <span class="selector-item__desc">+$380</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Add to Cart -->
+            <div class="product__actions">
+              <button class="btn btn--primary btn--lg" id="add-to-cart">Add to Cart</button>
+              
+              <div class="urgency-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+                Unique original. Only 1 available worldwide.
+              </div>
+            </div>
+
+            <!-- Accordions -->
+            <div class="accordion">
+              
+              <div class="accordion__item">
+                <button class="accordion__header" aria-expanded="true">
+                  Description
+                  <svg class="accordion__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
+                <div class="accordion__content" style="max-height: 500px;">
+                  <div class="accordion__content-inner">
+                    <p>Vasquez's "Nocturne in Gold" explores the tension between deep void spaces and aggressive textural interventions. Using layered oils mixed with raw pigment and meticulously applied 24K gold leaf, the canvas catches light differently depending on the time of day, creating a living, breathing presence within a room.</p>
+                    <p style="margin-top: var(--space-3)">This piece is part of her highly acclaimed "Midnight Meridian" series, exhibited in Barcelona in late 2023.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion__item">
+                <button class="accordion__header" aria-expanded="false">
+                  Authenticity & Provenance
+                  <svg class="accordion__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
+                <div class="accordion__content">
+                  <div class="accordion__content-inner">
+                    <p>All artwork shown is guaranteed to be authentic and arrives with formal documentation.</p>
+                    <div class="cert-preview">
+                      <div class="cert-preview__icon">📜</div>
+                      <div class="cert-preview__text">
+                        <strong>Includes Registered Certificate of Authenticity</strong><br>
+                        Signed by the artist and embossed with the Atelier Noir seal.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion__item">
+                <button class="accordion__header" aria-expanded="false">
+                  Shipping & Returns
+                  <svg class="accordion__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
+                <div class="accordion__content">
+                  <div class="accordion__content-inner">
+                    <p><strong>Secure Art Shipping:</strong> Ships securely packed in a custom wooden crate within 5-7 business days via fine-art courier service. Fully insured during transit.</p>
+                    <p style="margin-top: var(--space-3)"><strong>14-Day Review:</strong> We offer a 14-day return policy on all physical artworks to ensure it perfectly fits your space. Item must be returned in original condition and packaging.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="main-footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <div class="footer__brand">Atelier <span>Noir</span></div>
+            <p class="footer__desc">
+              A curated online gallery bringing museum-quality art to discerning collectors worldwide. Each piece selected with intention.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="footer__heading">Gallery</h4>
+            <a href="collection.html" class="footer__link">All Collections</a>
+            <a href="collection.html" class="footer__link">New Arrivals</a>
+            <a href="collection.html" class="footer__link">Limited Editions</a>
+            <a href="artists.html" class="footer__link">Our Artists</a>
+            <a href="commission.html" class="footer__link">Commissions</a>
+          </div>
+
+          <div>
+            <h4 class="footer__heading">Support</h4>
+            <a href="#" class="footer__link">Shipping & Returns</a>
+            <a href="#" class="footer__link">Care Guide</a>
+            <a href="#" class="footer__link">FAQs</a>
+            <a href="#" class="footer__link">Contact Us</a>
+            <a href="#" class="footer__link">Size Guide</a>
+          </div>
+
+          <div>
+            <h4 class="footer__heading">Company</h4>
+            <a href="about.html" class="footer__link">About</a>
+            <a href="#" class="footer__link">Press</a>
+            <a href="#" class="footer__link">Careers</a>
+            <a href="#" class="footer__link">Privacy Policy</a>
+            <a href="#" class="footer__link">Terms of Service</a>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copy">© 2025 Atelier Noir. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===== AR MODAL ===== -->
+  <div class="ar-modal" id="ar-modal" role="dialog" aria-modal="true" aria-label="View artwork in room">
+    <div class="ar-modal__header">
+      <span class="ar-modal__title">View in Room Simulation</span>
+      <button class="ar-modal__close" id="ar-close">
+        Close
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="ar-modal__view">
+      <img src="assets/room-mockup.png" alt="Minimalist room with blank wall over sofa" class="ar-modal__bg">
+      <img src="assets/artwork-abstract.png" alt="Artwork preview" class="ar-modal__artwork" id="ar-artwork" style="width: 250px;">
+    </div>
+    
+    <div class="ar-modal__controls">
+      <div class="ar-control">
+        <label for="ar-scale">Adjust Artwork Scale</label>
+        <input type="range" id="ar-scale" min="0" max="100" value="30">
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the full collection of museum-quality fine art at Atelier Noir.">
+  <title>Collection — Atelier Noir</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages/collection.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E🎨%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <!-- Film Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" id="nav-logo">
+        Atelier <span>Noir</span>
+      </a>
+      
+      <div class="nav__links" id="nav-links">
+        <a href="index.html" class="nav__link" id="nav-home">Home</a>
+        <a href="collection.html" class="nav__link nav__link--active" id="nav-collections">Collections</a>
+        <a href="artists.html" class="nav__link" id="nav-artists">Artists</a>
+        <a href="commission.html" class="nav__link" id="nav-commission">Commission</a>
+        <a href="about.html" class="nav__link" id="nav-about">About</a>
+      </div>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <a href="cart.html" class="btn--icon cart-count" aria-label="Shopping cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-count__badge" style="display:none">0</span>
+        </a>
+
+        <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html" class="mobile-nav__link">Home</a>
+    <a href="collection.html" class="mobile-nav__link">Collections</a>
+    <a href="artists.html" class="mobile-nav__link">Artists</a>
+    <a href="commission.html" class="mobile-nav__link">Commission</a>
+    <a href="about.html" class="mobile-nav__link">About</a>
+    <a href="cart.html" class="mobile-nav__link">Cart</a>
+  </div>
+
+  <div class="page">
+    <main class="page__main">
+      <!-- ===== COLLECTION HEADER ===== -->
+      <header class="collection-header reveal">
+        <div class="container">
+          <div class="breadcrumbs">
+            <a href="index.html">Home</a>
+            <span class="breadcrumbs__sep">/</span>
+            <span>Collections</span>
+            <span class="breadcrumbs__sep">/</span>
+            <span style="color: var(--color-text)">All Works</span>
+          </div>
+          <h1 class="collection-header__title">All Works</h1>
+          <p class="collection-header__desc">
+            Explore our complete curation of original paintings, limited edition prints, photography, and mixed media works.
+          </p>
+        </div>
+      </header>
+
+      <!-- ===== TOOLBAR ===== -->
+      <div class="toolbar" id="gallery-toolbar">
+        <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; width: 100%;">
+          <div class="toolbar__filters">
+            <button class="filter-btn active" data-filter="all">All Works</button>
+            <button class="filter-btn" data-filter="painting">Paintings</button>
+            <button class="filter-btn" data-filter="print">Fine Art Prints</button>
+            <button class="filter-btn" data-filter="photography">Photography</button>
+            <button class="filter-btn" data-filter="digital">Digital Art</button>
+            <button class="filter-btn" data-filter="mixed-media">Mixed Media</button>
+          </div>
+          
+          <div class="toolbar__meta">
+            <span class="toolbar__count" id="item-count">6 Works</span>
+            <div class="sort-wrap">
+              <select class="sort-select" id="sort-select" aria-label="Sort artworks">
+                <option value="featured">Sort by: Featured</option>
+                <option value="newest">Newest Arrivals</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+              </select>
+              <svg class="sort-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== GALLERY GRID ===== -->
+      <section class="gallery">
+        <div class="container">
+          <div class="gallery__grid reveal-stagger" id="gallery-grid">
+            
+            <!-- Item 1: Abstract Painting -->
+            <div class="gallery__item" data-category="painting" data-price="8400" data-date="2023-11-01">
+              <a href="product.html" class="artwork-card">
+                <div class="artwork-card__image-wrap">
+                  <div class="artwork-card__badges">
+                    <span class="badge badge--original">Original</span>
+                  </div>
+                  <img src="assets/artwork-abstract.png" alt="Abstract Expressionist Painting" class="artwork-card__image" loading="lazy">
+                  <div class="artwork-card__overlay"></div>
+                  <span class="artwork-card__action">View Work</span>
+                </div>
+                <div class="artwork-card__info">
+                  <div class="artwork-card__artist">Elena Vasquez</div>
+                  <h3 class="artwork-card__title">Nocturne in Gold</h3>
+                  <div class="artwork-card__details">
+                    <span class="artwork-card__medium">Oil on Canvas</span>
+                    <span class="artwork-card__price">$8,400</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Item 2: Digital -->
+            <div class="gallery__item" data-category="digital" data-price="3200" data-date="2024-01-15">
+              <a href="product.html" class="artwork-card">
+                <div class="artwork-card__image-wrap">
+                  <div class="artwork-card__badges">
+                    <span class="badge badge--limited">Edition 3/25</span>
+                  </div>
+                  <img src="assets/artwork-digital.png" alt="Digital Art" class="artwork-card__image" loading="lazy">
+                  <div class="artwork-card__overlay"></div>
+                  <span class="artwork-card__action">View Work</span>
+                </div>
+                <div class="artwork-card__info">
+                  <div class="artwork-card__artist">Viktor Sørensen</div>
+                  <h3 class="artwork-card__title">Convergence No. 7</h3>
+                  <div class="artwork-card__details">
+                    <span class="artwork-card__medium">Digital File + Print</span>
+                    <span class="artwork-card__price">$3,200</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Item 3: Mixed Media -->
+            <div class="gallery__item" data-category="mixed-media" data-price="4500" data-date="2023-09-20">
+              <a href="product.html" class="artwork-card">
+                <div class="artwork-card__image-wrap">
+                  <div class="artwork-card__badges">
+                    <span class="badge badge--original">Original</span>
+                  </div>
+                  <img src="assets/artwork-mixed-media.png" alt="Mixed Media Artwork" class="artwork-card__image" loading="lazy">
+                  <div class="artwork-card__overlay"></div>
+                  <span class="artwork-card__action">View Work</span>
+                </div>
+                <div class="artwork-card__info">
+                  <div class="artwork-card__artist">Samira Al-Fayed</div>
+                  <h3 class="artwork-card__title">Echoes of Time</h3>
+                  <div class="artwork-card__details">
+                    <span class="artwork-card__medium">Mixed Media Collage</span>
+                    <span class="artwork-card__price">$4,500</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Item 4: Painting (Seascape) -->
+            <div class="gallery__item" data-category="painting" data-price="6200" data-date="2024-02-10">
+              <a href="product.html" class="artwork-card">
+                <div class="artwork-card__image-wrap">
+                  <div class="artwork-card__badges">
+                    <span class="badge badge--original">Original</span>
+                  </div>
+                  <img src="assets/artwork-painting.png" alt="Impressionist Seascape" class="artwork-card__image" loading="lazy">
+                  <div class="artwork-card__overlay"></div>
+                  <span class="artwork-card__action">View Work</span>
+                </div>
+                <div class="artwork-card__info">
+                  <div class="artwork-card__artist">Amélie Moreau</div>
+                  <h3 class="artwork-card__title">Tides of Gold</h3>
+                  <div class="artwork-card__details">
+                    <span class="artwork-card__medium">Oil on Canvas</span>
+                    <span class="artwork-card__price">$6,200</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Item 5: Photography -->
+            <div class="gallery__item" data-category="photography" data-price="1200" data-date="2023-08-05">
+              <a href="product.html" class="artwork-card">
+                <div class="artwork-card__image-wrap">
+                  <div class="artwork-card__badges">
+                    <span class="badge badge--limited">Edition 12/50</span>
+                  </div>
+                  <img src="assets/artwork-photography.png" alt="Fine Art Photography" class="artwork-card__image" loading="lazy">
+                  <div class="artwork-card__overlay"></div>
+                  <span class="artwork-card__action">View Work</span>
+                </div>
+                <div class="artwork-card__info">
+                  <div class="artwork-card__artist">David Chen</div>
+                  <h3 class="artwork-card__title">Morning Fog, Kyoto</h3>
+                  <div class="artwork-card__details">
+                    <span class="artwork-card__medium">Archival Pigment Print</span>
+                    <span class="artwork-card__price">$1,200</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Item 6: Fine Art Print -->
+            <div class="gallery__item" data-category="print" data-price="850" data-date="2024-03-01">
+              <a href="product.html" class="artwork-card">
+                <div class="artwork-card__image-wrap">
+                  <div class="artwork-card__badges">
+                    <span class="badge badge--limited">Edition 45/100</span>
+                  </div>
+                  <img src="assets/artwork-print.png" alt="Minimalist Fine Art Print" class="artwork-card__image" loading="lazy">
+                  <div class="artwork-card__overlay"></div>
+                  <span class="artwork-card__action">View Work</span>
+                </div>
+                <div class="artwork-card__info">
+                  <div class="artwork-card__artist">Haruki Tanaka</div>
+                  <h3 class="artwork-card__title">Architectural Fragment IV</h3>
+                  <div class="artwork-card__details">
+                    <span class="artwork-card__medium">Giclée Print</span>
+                    <span class="artwork-card__price">$850</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Empty State -->
+          <div class="gallery__empty" id="gallery-empty">
+            <h3 class="font-display text-2xl mb-2">No artworks found</h3>
+            <p class="text-secondary mb-6">We couldn't find any works matching your selected filter.</p>
+            <button class="btn btn--secondary" onclick="document.querySelector('.filter-btn[data-filter=\'all\']').click()">View All Works</button>
+          </div>
+
+          <!-- Pagination (Static for Prototype) -->
+          <div class="pagination reveal" style="margin-top: var(--space-12); display: flex; justify-content: center; gap: var(--space-2);">
+            <button class="btn btn--secondary" disabled>&larr; Prev</button>
+            <button class="btn btn--secondary active">1</button>
+            <button class="btn btn--secondary">2</button>
+            <button class="btn btn--secondary">3</button>
+            <button class="btn btn--secondary">Next &rarr;</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="main-footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <div class="footer__brand">Atelier <span>Noir</span></div>
+            <p class="footer__desc">
+              A curated online gallery bringing museum-quality art to discerning collectors worldwide. Each piece selected with intention.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="footer__heading">Gallery</h4>
+            <a href="collection.html" class="footer__link">All Collections</a>
+            <a href="collection.html" class="footer__link">New Arrivals</a>
+            <a href="collection.html" class="footer__link">Limited Editions</a>
+            <a href="artists.html" class="footer__link">Our Artists</a>
+            <a href="commission.html" class="footer__link">Commissions</a>
+          </div>
+
+          <div>
+            <h4 class="footer__heading">Support</h4>
+            <a href="#" class="footer__link">Shipping & Returns</a>
+            <a href="#" class="footer__link">Care Guide</a>
+            <a href="#" class="footer__link">FAQs</a>
+            <a href="#" class="footer__link">Contact Us</a>
+            <a href="#" class="footer__link">Size Guide</a>
+          </div>
+
+          <div>
+            <h4 class="footer__heading">Company</h4>
+            <a href="about.html" class="footer__link">About</a>
+            <a href="#" class="footer__link">Press</a>
+            <a href="#" class="footer__link">Careers</a>
+            <a href="#" class="footer__link">Privacy Policy</a>
+            <a href="#" class="footer__link">Terms of Service</a>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copy">© 2025 Atelier Noir. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

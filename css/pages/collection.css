@@ -1,0 +1,301 @@
+/* ============================================
+   ATELIER NOIR — Collection Page Styles
+   ============================================ */
+
+/* --- Collection Header --- */
+.collection-header {
+  padding-block: var(--space-section) var(--space-8);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-primary);
+}
+
+.collection-header__title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-4xl), 6vw, var(--text-6xl));
+  font-weight: var(--weight-light);
+  margin-bottom: var(--space-4);
+}
+
+.collection-header__desc {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+}
+
+/* --- Filter & Tools Bar --- */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-overlay);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: var(--nav-height-scrolled);
+  z-index: 100;
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+/* Allow hiding toolbar on scroll down, show on up */
+.toolbar.is-hidden {
+  transform: translateY(-100%);
+}
+
+.toolbar__filters {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  overflow-x: auto;
+  scrollbar-width: none; /* Auto-hide scrollbar */
+}
+
+.toolbar__filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  color: var(--color-text);
+  background: var(--color-bg-tertiary);
+}
+
+.filter-btn.active {
+  color: var(--color-bg-primary);
+  background: var(--color-text-primary);
+}
+
+.toolbar__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  font-size: var(--text-sm);
+}
+
+.toolbar__count {
+  color: var(--color-text-tertiary);
+}
+
+/* Custom Select for Sorting */
+.sort-wrap {
+  position: relative;
+}
+
+.sort-select {
+  appearance: none;
+  background: transparent;
+  border: none;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  padding-right: var(--space-5);
+  cursor: pointer;
+}
+
+.sort-select:focus {
+  outline: none;
+}
+
+.sort-icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--color-text-secondary);
+}
+
+/* --- Gallery Grid (Masonry with CSS Columns) --- */
+.gallery {
+  padding-block: var(--space-9) var(--space-section);
+  min-height: 50vh;
+}
+
+.gallery__grid {
+  column-count: 3;
+  column-gap: var(--space-6);
+}
+
+.gallery__item {
+  break-inside: avoid;
+  margin-bottom: var(--space-6);
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--duration-normal) var(--ease-out), transform var(--duration-normal) var(--ease-out);
+}
+
+/* Filtering classes */
+.gallery__item.is-hiding {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+.gallery__item.is-hidden {
+  display: none;
+}
+
+/* Empty State */
+.gallery__empty {
+  display: none;
+  text-align: center;
+  padding-block: var(--space-12);
+  grid-column: 1 / -1;
+}
+
+.gallery__empty.is-visible {
+  display: block;
+}
+
+/* --- Artwork Card --- */
+.artwork-card {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  group: card;
+}
+
+.artwork-card__image-wrap {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg-tertiary);
+  margin-bottom: var(--space-4);
+}
+
+.artwork-card__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.artwork-card:hover .artwork-card__image {
+  transform: scale(1.05);
+}
+
+.artwork-card__badges {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  z-index: 2;
+}
+
+.artwork-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.2);
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+  z-index: 1;
+}
+
+.artwork-card:hover .artwork-card__overlay {
+  opacity: 1;
+}
+
+.artwork-card__action {
+  position: absolute;
+  bottom: var(--space-4);
+  left: 50%;
+  transform: translate(-50%, 10px);
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: var(--space-2) var(--space-5);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  opacity: 0;
+  transition: all var(--duration-normal) var(--ease-out);
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.artwork-card:hover .artwork-card__action {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.artwork-card__info {
+  text-align: left;
+}
+
+.artwork-card__artist {
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  margin-bottom: var(--space-1);
+}
+
+.artwork-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-regular);
+  margin-bottom: var(--space-1);
+}
+
+.artwork-card__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-2);
+}
+
+.artwork-card__medium {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.artwork-card__price {
+  font-size: var(--text-md);
+  color: var(--color-accent);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .gallery__grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+  
+  .toolbar__filters {
+    width: 100%;
+    padding-bottom: var(--space-2);
+  }
+  
+  .toolbar__meta {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery__grid {
+    column-count: 1;
+  }
+}

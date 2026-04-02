@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atelier Noir — A premium online art gallery featuring curated fine art prints, original paintings, photography, and limited editions from world-class artists.">
+  <title>Atelier Noir — Curated Fine Art Gallery</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E🎨%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <!-- Film Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav nav--transparent" id="main-nav" data-transparent="true" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" id="nav-logo">
+        Atelier <span>Noir</span>
+      </a>
+      
+      <div class="nav__links" id="nav-links">
+        <a href="index.html" class="nav__link nav__link--active" id="nav-home">Home</a>
+        <a href="collection.html" class="nav__link" id="nav-collections">Collections</a>
+        <a href="artists.html" class="nav__link" id="nav-artists">Artists</a>
+        <a href="commission.html" class="nav__link" id="nav-commission">Commission</a>
+        <a href="about.html" class="nav__link" id="nav-about">About</a>
+      </div>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <a href="cart.html" class="btn--icon cart-count" id="cart-btn" aria-label="Shopping cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-count__badge" style="display:none">0</span>
+        </a>
+
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html" class="mobile-nav__link">Home</a>
+    <a href="collection.html" class="mobile-nav__link">Collections</a>
+    <a href="artists.html" class="mobile-nav__link">Artists</a>
+    <a href="commission.html" class="mobile-nav__link">Commission</a>
+    <a href="about.html" class="mobile-nav__link">About</a>
+    <a href="cart.html" class="mobile-nav__link">Cart</a>
+  </div>
+
+  <div class="page">
+    <main class="page__main">
+      <!-- ===== HERO ===== -->
+      <section class="hero" id="hero">
+        <div class="hero__bg">
+          <img src="assets/hero-artwork.png" alt="Abstract expressionist painting in crimson, gold and charcoal" loading="eager">
+          <div class="hero__gradient"></div>
+        </div>
+
+        <div class="hero__content">
+          <p class="hero__label">Curated Fine Art Since 2019</p>
+          <h1 class="hero__title">
+            Where Art Meets <em>Intention</em>
+          </h1>
+          <p class="hero__subtitle">
+            Discover museum-quality originals, limited editions, and fine art prints from emerging and established artists worldwide.
+          </p>
+          <div class="hero__actions">
+            <a href="collection.html" class="btn btn--primary btn--lg" id="hero-cta-explore">Explore Collection</a>
+            <a href="commission.html" class="btn btn--secondary btn--lg" id="hero-cta-commission" style="color: #F5F0EB; border-color: rgba(245,240,235,0.4);">Request Commission</a>
+          </div>
+        </div>
+
+        <div class="hero__scroll-indicator" id="hero-scroll">
+          <span>Scroll</span>
+          <div class="hero__scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- ===== FEATURED ARTWORKS ===== -->
+      <section class="featured" id="featured">
+        <div class="container">
+          <div class="featured__header reveal">
+            <div class="section-label" style="justify-content: center;">
+              <div class="section-label__line" style="max-width: 48px;"></div>
+              <span class="section-label__text">Featured Works</span>
+              <div class="section-label__line" style="max-width: 48px;"></div>
+            </div>
+            <h2 class="featured__title">Selected by Our Curators</h2>
+            <p class="featured__subtitle">Each piece is chosen for its artistic merit, emotional depth, and collectibility.</p>
+          </div>
+
+          <!-- Featured Artwork 1 — Image Left -->
+          <div class="featured-artwork featured-artwork--left reveal">
+            <div class="featured-artwork__image-wrap image-reveal">
+              <img src="assets/artwork-painting.png" alt="Abstract seascape oil painting with navy blue ocean and golden sand">
+              <div class="featured-artwork__shadow"></div>
+            </div>
+            <div class="featured-artwork__content">
+              <div class="featured-artwork__meta">
+                <span class="featured-artwork__artist">Amélie Moreau</span>
+                <span class="featured-artwork__dot"></span>
+                <span class="featured-artwork__medium">Oil on Canvas</span>
+              </div>
+              <h3 class="featured-artwork__title">Tides of Gold</h3>
+              <p class="featured-artwork__desc">
+                A powerful impressionist seascape capturing the raw energy where turquoise waves crash against golden shores. Moreau's signature impasto brushwork brings depth and movement to every inch of the canvas.
+              </p>
+              <div class="featured-artwork__footer">
+                <span class="featured-artwork__price">$8,400</span>
+                <a href="product.html" class="btn btn--secondary" id="featured-cta-1">View Work</a>
+              </div>
+              <div style="margin-top: var(--space-3);">
+                <span class="badge badge--original">Original</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Artwork 2 — Image Right -->
+          <div class="featured-artwork featured-artwork--right reveal">
+            <div class="featured-artwork__content">
+              <div class="featured-artwork__meta">
+                <span class="featured-artwork__artist">Viktor Sørensen</span>
+                <span class="featured-artwork__dot"></span>
+                <span class="featured-artwork__medium">Digital Art</span>
+              </div>
+              <h3 class="featured-artwork__title">Convergence No. 7</h3>
+              <p class="featured-artwork__desc">
+                A mesmerizing digital composition where geometric precision meets organic flow. Sørensen's work explores the tension between order and chaos through deep teal and luminous gold.
+              </p>
+              <div class="featured-artwork__footer">
+                <span class="featured-artwork__price">$3,200</span>
+                <a href="product.html" class="btn btn--secondary" id="featured-cta-2">View Work</a>
+              </div>
+              <div style="margin-top: var(--space-3);">
+                <span class="badge badge--limited">Limited Edition — 3 of 25</span>
+              </div>
+            </div>
+            <div class="featured-artwork__image-wrap image-reveal">
+              <img src="assets/artwork-digital.png" alt="Contemporary digital art with geometric teal and gold forms">
+              <div class="featured-artwork__shadow"></div>
+            </div>
+          </div>
+
+          <!-- Featured Artwork 3 — Image Left -->
+          <div class="featured-artwork featured-artwork--left reveal">
+            <div class="featured-artwork__image-wrap image-reveal">
+              <img src="assets/artwork-print.png" alt="Minimalist fine art print with terracotta and black geometric shapes">
+              <div class="featured-artwork__shadow"></div>
+            </div>
+            <div class="featured-artwork__content">
+              <div class="featured-artwork__meta">
+                <span class="featured-artwork__artist">Haruki Tanaka</span>
+                <span class="featured-artwork__dot"></span>
+                <span class="featured-artwork__medium">Giclée Print</span>
+              </div>
+              <h3 class="featured-artwork__title">Architectural Fragment IV</h3>
+              <p class="featured-artwork__desc">
+                Part of Tanaka's acclaimed "Structures" series, this minimalist composition reduces architecture to its essential forms — a dialogue between circle and line, terracotta warmth and charcoal restraint.
+              </p>
+              <div class="featured-artwork__footer">
+                <span class="featured-artwork__price">$1,800</span>
+                <a href="product.html" class="btn btn--secondary" id="featured-cta-3">View Work</a>
+              </div>
+              <div style="margin-top: var(--space-3);">
+                <span class="badge badge--limited">Limited Edition — 12 of 50</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== COLLECTIONS STRIP ===== -->
+      <section class="collections-strip" id="collections">
+        <div class="container">
+          <div class="collections-strip__header reveal">
+            <div class="section-label" style="justify-content: center;">
+              <div class="section-label__line" style="max-width: 48px;"></div>
+              <span class="section-label__text">Browse Collections</span>
+              <div class="section-label__line" style="max-width: 48px;"></div>
+            </div>
+            <h2 class="featured__title">Curated Categories</h2>
+          </div>
+        </div>
+
+        <div class="collections-strip__scroll reveal-stagger" id="collections-scroll">
+          <!-- Collection 1 -->
+          <a href="collection.html" class="collection-card" id="collection-fine-prints">
+            <img src="assets/artwork-print.png" alt="Fine Art Prints collection" class="collection-card__image">
+            <div class="collection-card__overlay">
+              <span class="collection-card__count">8 Works</span>
+              <h3 class="collection-card__title">Fine Art Prints</h3>
+              <p class="collection-card__desc">Museum-quality giclée on archival paper</p>
+            </div>
+            <div class="collection-card__arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Collection 2 -->
+          <a href="collection.html" class="collection-card" id="collection-paintings">
+            <img src="assets/artwork-painting.png" alt="Original Paintings collection" class="collection-card__image">
+            <div class="collection-card__overlay">
+              <span class="collection-card__count">12 Works</span>
+              <h3 class="collection-card__title">Original Paintings</h3>
+              <p class="collection-card__desc">One-of-a-kind oil, acrylic, and watercolor</p>
+            </div>
+            <div class="collection-card__arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Collection 3 -->
+          <a href="collection.html" class="collection-card" id="collection-digital">
+            <img src="assets/artwork-digital.png" alt="Digital Art collection" class="collection-card__image">
+            <div class="collection-card__overlay">
+              <span class="collection-card__count">6 Works</span>
+              <h3 class="collection-card__title">Digital Art</h3>
+              <p class="collection-card__desc">Contemporary digital creations</p>
+            </div>
+            <div class="collection-card__arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Collection 4 -->
+          <a href="collection.html" class="collection-card" id="collection-photography">
+            <img src="assets/artwork-photography.png" alt="Photography collection" class="collection-card__image">
+            <div class="collection-card__overlay">
+              <span class="collection-card__count">7 Works</span>
+              <h3 class="collection-card__title">Photography</h3>
+              <p class="collection-card__desc">Fine art landscapes, portraits, abstract</p>
+            </div>
+            <div class="collection-card__arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Collection 5 -->
+          <a href="collection.html" class="collection-card" id="collection-mixed-media">
+            <img src="assets/artwork-mixed-media.png" alt="Mixed Media collection" class="collection-card__image">
+            <div class="collection-card__overlay">
+              <span class="collection-card__count">4 Works</span>
+              <h3 class="collection-card__title">Mixed Media</h3>
+              <p class="collection-card__desc">Collage, assemblage, experimental</p>
+            </div>
+            <div class="collection-card__arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Collection 6 -->
+          <a href="collection.html" class="collection-card" id="collection-limited">
+            <img src="assets/artwork-abstract.png" alt="Limited Editions collection" class="collection-card__image">
+            <div class="collection-card__overlay">
+              <span class="collection-card__count">3 Works</span>
+              <h3 class="collection-card__title">Limited Editions</h3>
+              <p class="collection-card__desc">Numbered, signed with certificate</p>
+            </div>
+            <div class="collection-card__arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ===== ARTIST SPOTLIGHT ===== -->
+      <section class="artist-spotlight" id="artist-spotlight">
+        <div class="container">
+          <div class="section-label reveal" style="margin-bottom: var(--space-9);">
+            <span class="section-label__text">Artist Spotlight</span>
+            <div class="section-label__line"></div>
+          </div>
+
+          <div class="artist-spotlight__inner reveal">
+            <div class="artist-spotlight__image-wrap image-reveal">
+              <img src="assets/artist-elena.png" alt="Elena Vasquez in her studio" loading="lazy">
+            </div>
+            <div class="artist-spotlight__content">
+              <span class="artist-spotlight__label">Featured Artist</span>
+              <h2 class="artist-spotlight__name">Elena Vasquez</h2>
+              <p class="artist-spotlight__medium">Abstract Expressionism · Oil & Mixed Media</p>
+              <p class="artist-spotlight__bio">
+                Based in Barcelona, Elena's work explores the intersection of memory and landscape. Her bold compositions layer vibrant pigments and found materials into deeply textured surfaces that invite intimate contemplation.
+              </p>
+              <div class="artist-spotlight__stats">
+                <div>
+                  <div class="artist-spotlight__stat-num">23</div>
+                  <div class="artist-spotlight__stat-label">Works</div>
+                </div>
+                <div>
+                  <div class="artist-spotlight__stat-num">14</div>
+                  <div class="artist-spotlight__stat-label">Exhibitions</div>
+                </div>
+                <div>
+                  <div class="artist-spotlight__stat-num">8</div>
+                  <div class="artist-spotlight__stat-label">Awards</div>
+                </div>
+              </div>
+              <div style="display: flex; gap: var(--space-4);">
+                <a href="artist.html" class="btn btn--primary" id="spotlight-view">View Profile</a>
+                <a href="commission.html" class="btn btn--ghost" id="spotlight-commission">Request Commission →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== GALLERY EXPERIENCE / STORY ===== -->
+      <section class="story" id="story">
+        <div class="container">
+          <div class="story__grid">
+            <div class="story__content reveal--left reveal">
+              <div class="section-label">
+                <span class="section-label__text">The Atelier Noir Experience</span>
+              </div>
+              <h2 class="story__heading">Every Artwork Tells a Story. We Help You Find Yours.</h2>
+              <p class="story__text">
+                We believe art should be experienced, not just displayed. Every piece in our gallery passes through a rigorous curation process—selected not only for technical mastery but for the emotional resonance it carries.
+              </p>
+              <p class="story__text">
+                From the moment you discover a work to the day it arrives at your door, we ensure a gallery-grade experience.
+              </p>
+
+              <div class="story__features reveal-stagger">
+                <div class="story__feature">
+                  <div class="story__feature-icon">🔍</div>
+                  <h4 class="story__feature-title">Expert Curation</h4>
+                  <p class="story__feature-desc">Every work vetted by our panel of art critics and curators</p>
+                </div>
+                <div class="story__feature">
+                  <div class="story__feature-icon">📜</div>
+                  <h4 class="story__feature-title">Authenticity</h4>
+                  <p class="story__feature-desc">Certificate of authenticity with every purchase</p>
+                </div>
+                <div class="story__feature">
+                  <div class="story__feature-icon">🏠</div>
+                  <h4 class="story__feature-title">View In Room</h4>
+                  <p class="story__feature-desc">See how artwork looks in your space before buying</p>
+                </div>
+                <div class="story__feature">
+                  <div class="story__feature-icon">🖼️</div>
+                  <h4 class="story__feature-title">Custom Framing</h4>
+                  <p class="story__feature-desc">Professional framing options with every print order</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="story__images reveal--right reveal">
+              <div class="story__image-wrap image-reveal">
+                <img src="assets/artwork-abstract.png" alt="Gallery exhibition view" loading="lazy">
+              </div>
+              <div class="story__image-wrap image-reveal">
+                <img src="assets/artwork-photography.png" alt="Fine art photography" loading="lazy">
+              </div>
+              <div class="story__image-wrap image-reveal">
+                <img src="assets/artwork-mixed-media.png" alt="Mixed media artwork detail" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== NEWSLETTER ===== -->
+      <section class="newsletter" id="newsletter">
+        <div class="container">
+          <div class="newsletter__inner reveal">
+            <div class="section-label" style="justify-content: center;">
+              <div class="section-label__line" style="max-width: 48px;"></div>
+              <span class="section-label__text">Stay Connected</span>
+              <div class="section-label__line" style="max-width: 48px;"></div>
+            </div>
+            <h2 class="newsletter__title">Join the Atelier</h2>
+            <p class="newsletter__desc">
+              Receive early access to new works, artist features, and exclusive invitations to private viewings.
+            </p>
+            <form class="newsletter-form newsletter__form" id="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed ✓'; this.querySelector('input').value='';">
+              <input type="email" class="newsletter-form__input" placeholder="Your email address" required aria-label="Email address" id="newsletter-email">
+              <button type="submit" class="newsletter-form__btn" id="newsletter-submit">Subscribe</button>
+            </form>
+            <p class="newsletter__privacy">We respect your privacy. Unsubscribe at any time.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="main-footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <div class="footer__brand">Atelier <span>Noir</span></div>
+            <p class="footer__desc">
+              A curated online gallery bringing museum-quality art to discerning collectors worldwide. Each piece selected with intention.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="footer__heading">Gallery</h4>
+            <a href="collection.html" class="footer__link">All Collections</a>
+            <a href="collection.html" class="footer__link">New Arrivals</a>
+            <a href="collection.html" class="footer__link">Limited Editions</a>
+            <a href="artists.html" class="footer__link">Our Artists</a>
+            <a href="commission.html" class="footer__link">Commissions</a>
+          </div>
+
+          <div>
+            <h4 class="footer__heading">Support</h4>
+            <a href="#" class="footer__link">Shipping & Returns</a>
+            <a href="#" class="footer__link">Care Guide</a>
+            <a href="#" class="footer__link">FAQs</a>
+            <a href="#" class="footer__link">Contact Us</a>
+            <a href="#" class="footer__link">Size Guide</a>
+          </div>
+
+          <div>
+            <h4 class="footer__heading">Company</h4>
+            <a href="about.html" class="footer__link">About</a>
+            <a href="#" class="footer__link">Press</a>
+            <a href="#" class="footer__link">Careers</a>
+            <a href="#" class="footer__link">Privacy Policy</a>
+            <a href="#" class="footer__link">Terms of Service</a>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copy">© 2025 Atelier Noir. All rights reserved.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social" aria-label="Pinterest">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.087-.791-.167-2.005.035-2.868.182-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.425 1.808-2.425.853 0 1.265.64 1.265 1.408 0 .858-.546 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.135-4.515 4.34 0 .859.331 1.781.745 2.282a.3.3 0 0 1 .069.288l-.278 1.133c-.044.183-.145.222-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.527-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M13.232 10.768L20 4"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>
