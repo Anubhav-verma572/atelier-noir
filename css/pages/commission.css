@@ -103,7 +103,7 @@
   padding: var(--space-4) 0;
   font-family: var(--font-body);
   font-size: var(--text-md);
-  color: var(--color-text);
+  color: var(--color-text-primary);
   transition: border-color var(--duration-fast) var(--ease-out);
 }
 
@@ -120,6 +120,10 @@
   color: var(--color-text-tertiary);
   pointer-events: none;
   transition: all var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Float the label when input is focused or not empty (handled via JS or placeholder-shown trick) */
